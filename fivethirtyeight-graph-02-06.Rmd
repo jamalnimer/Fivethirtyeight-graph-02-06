@@ -5,10 +5,18 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(gov.1005.data)
+library(dplyr)
+library(devtools)
+library(ggthemes)
 ```
 
 ```{r}
-Dems_Reps <- congress %>% 
-  filter()
-ggplot(congress, aes(age, year)) + geom_line()
+age_data <- congress %>% 
+  filter(party %in% c("D","R")) %>% 
+  group_by(year,party) %>% 
+  summarize (avg_age = mean(age))
+ggplot(age_data, aes(year, avg_age, color=party)) + geom_line() +ggthemes(fivethirtyeight)
 ```
