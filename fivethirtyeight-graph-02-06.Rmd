@@ -1,0 +1,14 @@
+---
+title: "fivethirtyeight"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+Dems_Reps <- congress %>% 
+  filter()
+ggplot(congress, aes(age, year)) + geom_line()
+```
